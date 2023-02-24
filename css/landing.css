@@ -182,6 +182,7 @@ aside img {
   }
   to {
     transform: translateY(50rem) scale(0);
+    display: none;
   }
 }
 @media (min-width: 768px) {
