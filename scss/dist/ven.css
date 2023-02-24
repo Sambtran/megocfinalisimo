@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,300&display=swap");
+* {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 4vw;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 15vh 10fr 5vh;
+  grid-template-areas: "hd" "mn" "ft";
+}
+
+header {
+  z-index: 1;
+  position: sticky;
+  top: 0px;
+  font-size: 0.9rem;
+  grid-area: hd;
+  background-color: black;
+}
+
+nav {
+  height: 100%;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+nav div {
+  transition: 0.7s all ease-in-out;
+  text-align: center;
+}
+nav div:hover {
+  transform: scale(1.2);
+  color: #eacf65;
+}
+nav img {
+  width: 20%;
+  height: 80%;
+}
+nav a {
+  color: white;
+}
+
+main {
+  background-color: #3c3c44;
+  grid-area: mn;
+  color: rgba(216, 216, 216, 0.829);
+  padding-bottom: 3rem;
+}
+
+footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 2rem;
+  grid-area: ft;
+  background-color: black;
+}
+footer div a {
+  color: white;
+}
+footer #redes {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  :root {
+    font-size: 16px;
+  }
+
+  header {
+    font-size: 1.8rem;
+  }
+
+  nav img {
+    width: 21.1%;
+    height: 100%;
+    content: url("../img/megocpc.png");
+  }
+
+  body {
+    height: 100vh;
+  }
+
+  footer {
+    justify-content: left;
+  }
+  footer #redes {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    width: 30%;
+  }
+  footer i:hover {
+    transform: scale(2);
+  }
+  footer div {
+    margin-left: 3rem;
+  }
+  footer :nth-child(4) {
+    position: absolute;
+    right: 2rem;
+  }
+}
+body {
+  height: 100vh;
+}
+
+p {
+  padding-left: 1rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "txt" "cua" "for";
+  padding-top: 5rem;
+}
+main iframe {
+  width: 100%;
+  height: 100%;
+}
+main section#txt {
+  grid-area: txt;
+}
+main section#cua {
+  grid-area: cua;
+  height: 100%;
+  height: 30rem;
+}
+main section#for {
+  grid-area: for;
+}
+
+section {
+  padding-top: 2rem;
+  width: 100%;
+}
+section table, section td {
+  padding: 0.2rem;
+  border: 1px solid white;
+}
+section h1::first-letter, section h2::first-letter {
+  color: #eacf65;
+}
+section p::first-letter {
+  color: #eacf65;
+}
+aside {
+  transition: all 1s ease-out;
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  top: 15%;
+  margin-bottom: 1rem;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.login-box {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 20rem;
+  padding: 3rem;
+  margin-bottom: 10rem;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #eacf65;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #eacf65;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+.login-box a span {
+  display: block;
+}
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #eacf65);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #eacf65);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #eacf65);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@media (min-width: 768px) {
+  .login-box a:hover {
+    background: #eacf65;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #eacf65, 0 0 25px #eacf65, 0 0 50px #eacf65, 0 0 100px #eacf65;
+  }
+
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "txt for" "cua for";
+    padding: 5rem 2rem;
+  }
+  main iframe {
+    width: 80%;
+    height: 50vh;
+    padding-bottom: 3rem;
+    margin-left: 10%;
+  }
+  main .login-box {
+    width: 40rem;
+    padding: 7rem;
+  }
+}

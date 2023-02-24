@@ -1,0 +1,29 @@
+* {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 7fr 1fr;
+  grid-template-areas: "hd" "mn" "ft";
+}
+
+header {
+  grid-area: hd;
+  background-color: #eacf65;
+}
+
+main {
+  background-color: #3c3c44;
+  grid-area: mn;
+}
+
+footer {
+  grid-area: ft;
+  background-color: #eacf65;
+}/*# sourceMappingURL=layout.css.map */

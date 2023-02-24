@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+* {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 4vw;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 15vh 10fr 5vh;
+  grid-template-areas: "hd" "mn" "ft";
+}
+
+header {
+  z-index: 1;
+  position: sticky;
+  top: 0px;
+  font-size: 0.9rem;
+  grid-area: hd;
+  background-color: black;
+}
+
+nav {
+  height: 100%;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+nav div {
+  transition: 0.7s all ease-in-out;
+  text-align: center;
+}
+nav div:hover {
+  transform: scale(1.2);
+  color: #eacf65;
+}
+nav img {
+  width: 20%;
+  height: 80%;
+}
+nav a {
+  color: white;
+}
+
+main {
+  background-color: #3c3c44;
+  grid-area: mn;
+  color: rgba(216, 216, 216, 0.829);
+  padding-bottom: 3rem;
+}
+
+footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 2rem;
+  grid-area: ft;
+  background-color: black;
+}
+footer div a {
+  color: white;
+}
+footer #redes {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  :root {
+    font-size: 16px;
+  }
+
+  header {
+    font-size: 1.8rem;
+  }
+
+  nav img {
+    width: 21.1%;
+    height: 100%;
+    content: url("../img/megocpc.png");
+  }
+
+  body {
+    height: 100vh;
+  }
+
+  footer {
+    justify-content: left;
+  }
+  footer #redes {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    width: 30%;
+  }
+  footer i:hover {
+    transform: scale(2);
+  }
+  footer div {
+    margin-left: 3rem;
+  }
+  footer :nth-child(4) {
+    position: absolute;
+    right: 2rem;
+  }
+}
+body {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+div:nth-child(2) {
+  background-image: url("../img/megoc1.jpg");
+  background-size: cover;
+}
+
+div:nth-child(3) {
+  background-image: url("../img/megoc2.jpeg");
+  background-size: cover;
+}
+
+div:nth-child(4) {
+  background-image: url("../img/megoc3.jpg");
+  background-size: cover;
+}
+
+div {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  height: 33vh;
+  background-color: red;
+  text-align: center;
+}
+div h1 {
+  color: red;
+  font-family: "Anton", sans-serif;
+  font-weight: bolder;
+  border-radius: 4rem;
+  -webkit-text-stroke: 2px white;
+  font-size: 3rem;
+  text-shadow: 0.4rem 0.4rem 0.4rem 0.4rem;
+  letter-spacing: 0.3rem;
+}
+
+div > div {
+  backdrop-filter: blur(2px);
+}
+
+aside {
+  transition: all 1s ease-in-out;
+  position: absolute;
+  top: 25%;
+  left: 0%;
+  animation: animacionmov 1s 0.5s forwards ease-in-out;
+  transform: scale(1);
+}
+aside img {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes animacionmov {
+  from {
+    transform: translateY(0) scale(1);
+  }
+  20% {
+    transform: scale(2) translateX(1rem);
+  }
+  99% {
+    transform: scale(200) translateX(1rem);
+  }
+  to {
+    transform: translateY(50rem) scale(0);
+  }
+}
+@media (min-width: 768px) {
+  body {
+    transition: all 1s ease;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  body div {
+    height: 100vh;
+  }
+
+  aside {
+    top: 5%;
+    left: 15%;
+    animation: animacionpc 1s 0.5s forwards ease-in-out;
+  }
+
+  @keyframes animacionpc {
+    from {
+      transform: translateY(0) scale(1);
+    }
+    20% {
+      transform: scale(2) translateX(2rem);
+    }
+    99% {
+      transform: scale(200) translateX(3rem);
+    }
+    to {
+      transform: translateY(50rem) scale(0);
+    }
+  }
+}
